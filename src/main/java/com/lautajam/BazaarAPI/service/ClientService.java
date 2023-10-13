@@ -5,6 +5,8 @@ import com.lautajam.BazaarAPI.repository.IClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClientService implements IClientService{
 
@@ -18,5 +20,15 @@ public class ClientService implements IClientService{
     @Override
     public void saveClient(Client client) {
         clientRepository.save(client);
+    }
+
+    /**
+     * Returns a list of all clients in the database.
+     * @return A list of all clients in the database
+     */
+    @Override
+    public List<Client> getAllClients() {
+       List<Client> allClientList = clientRepository.findAll();
+       return allClientList;
     }
 }

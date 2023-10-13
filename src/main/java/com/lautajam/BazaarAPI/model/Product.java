@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class Product {
     private double product_price;
     private double product_quantity_available;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "sale_products_list")
     private List<Sale> product_sales;
 

@@ -5,8 +5,10 @@ import com.lautajam.BazaarAPI.repository.ISaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class SaleService {
+public class SaleService implements ISaleService{
 
     @Autowired
     private ISaleRepository saleRepository;
@@ -17,5 +19,14 @@ public class SaleService {
      */
     public void saveSale(Sale sale) {
         saleRepository.save(sale);
+    }
+
+    /**
+     * Gets all sales from the database
+     * @return A list of all sales
+     */
+    @Override
+    public List<Sale> getAllSales() {
+        return saleRepository.findAll();
     }
 }
