@@ -12,11 +12,11 @@ import lombok.Setter;
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    long client_id;
-    String client_name;
-    String client_surname;
-    String client_dni;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long client_id;
+    private String client_name;
+    private String client_surname;
+    private String client_dni;
 
     /**
      * Empty constructor for the client model

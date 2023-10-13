@@ -15,23 +15,23 @@ import java.util.List;
 public class Sale {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    long sale_code;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long sale_code;
 
-    LocalDate sale_date;
-    double sale_total;
+    private LocalDate sale_date;
+    private double sale_total;
 
     @ManyToMany
     @JoinTable(
             name = "sale_product",
-            joinColumns = @JoinColumn(name = "sale_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
+            joinColumns = @JoinColumn(name = "sale_code"),
+            inverseJoinColumns = @JoinColumn(name = "product_code")
     )
     private List<Product> sale_products_list;
 
-    @OneToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "client_id")
-    Client sale_client;
+    @ManyToOne
+    @JoinColumn(name = "client_code")
+    private Client sale_client;
 
     /**
      * Empty constructor for the sale model

@@ -14,15 +14,15 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    long   product_code;
-    String product_name;
-    String product_brand;
-    double product_price;
-    double product_quantity_available;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long   product_code;
+    private String product_name;
+    private String product_brand;
+    private double product_price;
+    private double product_quantity_available;
 
     @ManyToMany(mappedBy = "sale_products_list")
-    private List<Sale> product_sales_list;
+    private List<Sale> product_sales;
 
     /**
      * Empty constructor for the product model
@@ -37,15 +37,15 @@ public class Product {
      * @param product_brand The brand of the product
      * @param product_price The price of the product
      * @param product_quantity_available The quantity available of the product
-     * @param product_sales_list The list of sales of the product
+     * @param product_sales The sales of the product
      */
     public Product(long product_code, String product_name, String product_brand,
-                   double product_price, double product_quantity_available, List<Sale> product_sales_list) {
+                   double product_price, double product_quantity_available, List<Sale> product_sales) {
         this.product_code = product_code;
         this.product_name = product_name;
         this.product_brand = product_brand;
         this.product_price = product_price;
         this.product_quantity_available = product_quantity_available;
-        this.product_sales_list = product_sales_list;
+        this.product_sales = product_sales;
     }
 }
