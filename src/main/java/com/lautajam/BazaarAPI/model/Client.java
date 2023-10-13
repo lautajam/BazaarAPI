@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +8,11 @@ import lombok.Setter;
  * Class representing the client model of the application
  */
 @Getter @Setter
+@Entity
 public class Client {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     long client_id;
     String client_name;
     String client_surname;

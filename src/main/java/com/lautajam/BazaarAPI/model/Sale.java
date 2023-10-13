@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,12 +11,26 @@ import java.util.List;
  * Class representing the sale model of the application
  */
 @Getter @Setter
+@Entity
 public class Sale {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     long sale_code;
+
     LocalDate sale_date;
     double sale_total;
-    List<Product> sale_products_list;
+
+    @ManyToMany
+    @JoinTable(
+            name = "sale_product",
+            joinColumns = @JoinColumn(name = "sale_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private List<Product> sale_products_list;
+
+    @OneToOne
+    @JoinColumn(name = "client_id", referencedColumnName = "client_id")
     Client sale_client;
 
     /**
