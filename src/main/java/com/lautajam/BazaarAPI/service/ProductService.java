@@ -18,8 +18,8 @@ public class ProductService implements IProductService{
     private IProductRepository productRepository;
 
     /**
-     * Saves a product to the database.
-     * @param product The product to be saved
+     * Create a new product in "product" table in the database.
+     * @param product The product to be created.
      */
     public void saveProduct(Product product) {
         productRepository.save(product);

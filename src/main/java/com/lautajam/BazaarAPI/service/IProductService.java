@@ -9,8 +9,8 @@ import java.util.List;
 public interface IProductService {
 
     /**
-     * Saves a client to the database
-     * @param product The product to be saved
+     * Create a new product in "product" table in the database.
+     * @param product The product to be created.
      */
     public void saveProduct(Product product);
 
