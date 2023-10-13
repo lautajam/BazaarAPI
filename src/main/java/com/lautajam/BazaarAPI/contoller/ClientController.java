@@ -49,6 +49,19 @@ public class ClientController {
     }
 
     /**
+     * Updates a client with the give a client.
+     * @param client The client to be updated
+     */
+    @PutMapping("/update")
+    public Client updateClient(@RequestBody Client client){
+        clientService.updateClient(client);
+
+        Client clientUpdated = clientService.getClientById(client.getClient_id());
+
+        return clientUpdated;
+    }
+
+    /**
      * Deletes a client with the given id.
      * @param client_id The id of the client to be deleted
      */

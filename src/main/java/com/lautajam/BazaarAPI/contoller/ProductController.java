@@ -39,11 +39,25 @@ public class ProductController {
      * @param product_code The id of the product to be returned
      * @return The product with the given id or null if no product with the given id exists
      */
-    @GetMapping("delete/{product_code}")
+    @GetMapping("/{product_code}")
     @ResponseBody
     public Product getProductById(@PathVariable long product_code) {
         Product product = productService.getProductById(product_code);
         return product;
+    }
+
+    /**
+     * Updates a product with the give a client.
+     *
+     * @param product The client to be updated
+     */
+    @PutMapping("/update")
+    public Product updateProduct(@RequestBody Product product){
+        productService.updateProduct(product);
+
+        Product productUpdated = productService.getProductById(product.getProduct_code());
+
+        return productUpdated;
     }
 
     /**

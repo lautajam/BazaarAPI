@@ -28,6 +28,12 @@ public interface IProductService {
     public Product getProductById(long product_code);
 
     /**
+     * Updates a product with the give a product.
+     * @param product The client to be updated
+     */
+    public void updateProduct(Product product);
+
+    /**
      *  Deletes a product with the given id.
      *  @param product_code The id of the product to be deleted
      */

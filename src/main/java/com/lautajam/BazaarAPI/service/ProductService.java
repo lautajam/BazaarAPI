@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.service;
 
+import com.lautajam.BazaarAPI.model.Client;
 import com.lautajam.BazaarAPI.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,14 @@ public class ProductService implements IProductService{
     public Product getProductById(long product_code) {
         Product product = productRepository.findById(product_code).orElse(null);
         return product;
+    }
+
+    /**
+     * Updates a product with the give a product.
+     * @param product The client to be updated
+     */
+    public void updateProduct(Product product){
+        this.saveProduct(product);
     }
 
     /**

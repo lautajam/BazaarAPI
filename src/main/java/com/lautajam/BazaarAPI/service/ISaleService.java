@@ -32,4 +32,10 @@ public interface ISaleService {
      *  @param sale_code The id of the sale to be deleted
      */
     public void deleteSaleById(long sale_code);
+
+    /**
+     *  Updates a sale with the given sale.
+     *  @param sale The sale to be updated
+     */
+    public void updateSale(Sale sale);
 }

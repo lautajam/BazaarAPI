@@ -28,6 +28,12 @@ public interface IClientService {
     public Client getClientById(long client_id);
 
     /**
+     * Updates a client with the give a client.
+     * @param client The client to be updated
+     */
+    public void updateClient(Client client);
+
+    /**
      * Deletes a client with the given id.
      * @param client_id The id of the client to be deleted
      */

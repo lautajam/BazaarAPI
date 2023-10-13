@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.contoller;
 
+import com.lautajam.BazaarAPI.model.Client;
 import com.lautajam.BazaarAPI.model.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,7 @@ public class SaleController {
     public Sale getSale(@PathVariable("sale_code") int sale_code){
         Sale sale = saleService.getSaleById(sale_code);
         return sale;
+
     }
 
     /**
@@ -55,4 +57,17 @@ public class SaleController {
         saleService.deleteSaleById(sale_code);
     }
 
+    /**
+     *  Updates a sale with the given sale.
+     *  @param sale The sale to be updated
+     */
+    @PutMapping("/update")
+    public Sale updateSale(@RequestBody Sale sale){
+
+        saleService.updateSale(sale);
+
+        Sale saleUpdated = saleService.getSaleById(sale.getSale_code());
+
+        return saleUpdated;
+    }
 }

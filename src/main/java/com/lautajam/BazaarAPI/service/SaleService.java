@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.service;
 
+import com.lautajam.BazaarAPI.model.Product;
 import com.lautajam.BazaarAPI.model.Sale;
 import com.lautajam.BazaarAPI.repository.ISaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,15 @@ public class SaleService implements ISaleService{
     public Sale getSaleById(long sale_code) {
         Sale sale = saleRepository.findById(sale_code).orElse(null);
         return sale;
+    }
+
+    /**
+     *  Updates a sale with the given sale.
+     *  @param sale The sale to be updated
+     */
+    @Override
+    public void updateSale(Sale sale){
+        this.saveSale(sale);
     }
 
     /**
