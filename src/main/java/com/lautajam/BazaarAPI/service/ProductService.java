@@ -11,8 +11,8 @@ import java.util.List;
 @Service
 public class ProductService implements IProductService{
 
-    final double LESS_STOCK = 5.0;
-    private final List<Product> voidList = new ArrayList<>();
+    private final double LESS_STOCK = 5.0;
+    final List<Product> voidList = new ArrayList<>();
 
     @Autowired
     private IProductRepository productRepository;

@@ -1,5 +1,6 @@
 package com.lautajam.BazaarAPI.contoller;
 
+import com.lautajam.BazaarAPI.model.Sale;
 import com.lautajam.BazaarAPI.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

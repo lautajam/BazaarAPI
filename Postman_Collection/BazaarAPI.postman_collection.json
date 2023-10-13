@@ -149,7 +149,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_name\": \"Teclado Kumara 522 Redragon\",\r\n    \"product_brand\": \"Redragon\",\r\n    \"product_price\": 30,\r\n    \"product_quantity_available\": 7\r\n}",
+									"raw": "{\r\n    \"product_name\": \"Segunda prueba\",\r\n    \"product_brand\": \"si sigo probando asi\",\r\n    \"product_price\": 341,\r\n    \"product_quantity_available\": 4\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -267,7 +267,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"sale_date\": \"2023-06-03\",\r\n  \"sale_total\": 300,\r\n  \"sale_products_list\": [\r\n    {\r\n      \"product_code\": 4\r\n    },\r\n    {\r\n      \"product_code\": 4\r\n    },\r\n    {\r\n      \"product_code\": 4\r\n    },\r\n    {\r\n      \"product_code\": 4\r\n    }\r\n  ],\r\n  \"sale_client\": {\r\n    \"client_id\": 1\r\n  }\r\n}\r\n",
+									"raw": "{\r\n  \"sale_date\": \"2023-10-13\",\r\n  \"sale_total\": 50,\r\n  \"sale_products_list\": [\r\n    {\r\n      \"product_code\": 4\r\n    },\r\n    {\r\n      \"product_code\": 1\r\n    },\r\n    {\r\n      \"product_code\": 3\r\n    },\r\n    {\r\n      \"product_code\": 2\r\n    }\r\n  ],\r\n  \"sale_client\": {\r\n    \"client_id\": 1\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -374,6 +374,89 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Additions",
+			"item": [
+				{
+					"name": "Show products stock less 5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/stockless",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"stockless"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all products of a sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/sales/products/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sales",
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show sum and total amount of sales on a specific day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/sales/date/2023-10-13",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sales",
+								"date",
+								"2023-10-13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show top sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/sales/top",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sales",
+								"top"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

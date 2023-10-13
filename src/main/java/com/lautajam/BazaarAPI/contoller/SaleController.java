@@ -1,12 +1,17 @@
 package com.lautajam.BazaarAPI.contoller;
 
-import com.lautajam.BazaarAPI.model.Client;
+import com.lautajam.BazaarAPI.dto.TopSaleDTO;
+import com.lautajam.BazaarAPI.model.Product;
 import com.lautajam.BazaarAPI.model.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.lautajam.BazaarAPI.service.SaleService;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/sales")
@@ -69,5 +74,47 @@ public class SaleController {
         Sale saleUpdated = saleService.getSaleById(sale.getSale_code());
 
         return saleUpdated;
+    }
+
+    /**
+     * Return a list of products that are on sale
+     * @param sale_code The id of the sale to be returned a list of products
+     * @return A list of products that are on sale
+     */
+    @GetMapping("/products/{sale_code}")
+    @ResponseBody
+    public List<Product> getProductsOnSale(@PathVariable long sale_code){
+        List<Product> listSaleProducts = saleService.getProductsOnSale(sale_code);
+        return listSaleProducts;
+    }
+
+
+    /**
+     * Return the sum of the amount and also the total amount of sales for a given day.
+     * @param date The date to be returned the sum of the amount and also the total amount of sales
+     * @return The sum of the amount and also the total amount of sales for a given day
+     */
+    @GetMapping("/date/{date}")
+    @ResponseBody
+    public Map<String, Double> getSumOfAmountAndTotalAmountOfSales(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
+        Map<String, Double> salesByDate = saleService.getSumOfAmountAndTotalAmountOfSales(date);
+        return salesByDate;
+    }
+
+    /**
+     * Return the top sale, the sale with the highest price
+     * Uses the DTO TopSaleDTO that has the attributes:
+     * private long sale_code;
+     * private double totalPrice;
+     * private int amountOfProducts;
+     * private String client_name;
+     * private String client_surname;
+     * @return The top sale, the sale with the highest price
+     */
+    @GetMapping("/top")
+    @ResponseBody
+    public TopSaleDTO getTopSale(){
+        TopSaleDTO topSale = saleService.getTopSale();
+        return topSale;
     }
 }
