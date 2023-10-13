@@ -39,4 +39,12 @@ public class ProductService implements IProductService{
         Product product = productRepository.findById(product_code).orElse(null);
         return product;
     }
+
+    /**
+     *  Deletes a product with the given id.
+     *  @param product_code The id of the product to be deleted
+     */
+    public void deleteProductById(long product_code) {
+        productRepository.deleteById(product_code);
+    }
 }

@@ -26,4 +26,10 @@ public interface ISaleService {
      * @return The sale with the given id or null if no sale with the given id exists
      */
     public Sale getSaleById(long sale_code);
+
+    /**
+     *  Deletes a sale with the given id.
+     *  @param sale_code The id of the sale to be deleted
+     */
+    public void deleteSaleById(long sale_code);
 }

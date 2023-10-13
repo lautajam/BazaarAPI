@@ -8,6 +8,7 @@ import com.lautajam.BazaarAPI.service.ClientService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/clients")
 public class ClientController {
 
     @Autowired
@@ -18,7 +19,7 @@ public class ClientController {
      *
      * @param client
      */
-    @PostMapping("/clients/create")
+    @PostMapping("/create")
     public void createCliente(@RequestBody Client client) {
         clientService.saveClient(client);
     }
@@ -28,7 +29,7 @@ public class ClientController {
      *
      * @return List of clients.
      */
-    @GetMapping("/clients")
+    @GetMapping("")
     @ResponseBody
     public List<Client> getAllClients() {
         List<Client> allClientList = clientService.getAllClients();
@@ -40,10 +41,19 @@ public class ClientController {
      * @param client_id The id of the client to be returned
      * @return The client with the given id or null if no client with the given id exists
      */
-    @GetMapping("/clients/{client_id}")
+    @GetMapping("/{client_id}")
     @ResponseBody
     public Client getClientById(@PathVariable long client_id) {
         Client clientById = clientService.getClientById(client_id);
         return clientById;
+    }
+
+    /**
+     * Deletes a client with the given id.
+     * @param client_id The id of the client to be deleted
+     */
+    @DeleteMapping("/delete/{client_id}")
+    public void deleteClientById(@PathVariable long client_id){
+        clientService.deleteClientById(client_id);
     }
 }

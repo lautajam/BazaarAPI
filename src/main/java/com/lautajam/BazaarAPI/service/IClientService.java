@@ -26,4 +26,10 @@ public interface IClientService {
      * @return The client with the given id or null if no client with the given id exists
      */
     public Client getClientById(long client_id);
+
+    /**
+     * Deletes a client with the given id.
+     * @param client_id The id of the client to be deleted
+     */
+    public void deleteClientById(long client_id);
 }

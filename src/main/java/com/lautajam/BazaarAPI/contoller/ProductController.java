@@ -8,6 +8,7 @@ import com.lautajam.BazaarAPI.model.Product;
 import java.util.List;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
@@ -17,7 +18,7 @@ public class ProductController {
      * Create a new product in "product" table in the database.
      * @param product
      */
-    @PostMapping("/products/create")
+    @PostMapping("/create")
     public void createProduct(@RequestBody Product product) {
         productService.saveProduct(product);
     }
@@ -26,7 +27,7 @@ public class ProductController {
      * Get all products from "product" table in the database.
      * @return List of products.
      */
-    @GetMapping("/products")
+    @GetMapping("")
     @ResponseBody
     public List<Product> getAllProducts() {
         List<Product> allProductList = productService.getAllProducts();
@@ -38,10 +39,20 @@ public class ProductController {
      * @param product_code The id of the product to be returned
      * @return The product with the given id or null if no product with the given id exists
      */
-    @GetMapping("/products/{product_id}")
+    @GetMapping("delete/{product_code}")
     @ResponseBody
-    public Product getProductById(@PathVariable("product_id") long product_code) {
+    public Product getProductById(@PathVariable long product_code) {
         Product product = productService.getProductById(product_code);
         return product;
     }
+
+    /**
+     *  Deletes a product with the given id.
+     *  @param product_code The id of the product to be deleted
+     */
+    @DeleteMapping("delete/{product_code}")
+    public void deleteProductById(@PathVariable("product_code") long product_code) {
+        productService.deleteProductById(product_code);
+    }
+
 }

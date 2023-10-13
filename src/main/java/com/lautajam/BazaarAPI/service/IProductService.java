@@ -26,4 +26,10 @@ public interface IProductService {
      * @return The product with the given id or null if no client with the given id exists
      */
     public Product getProductById(long product_code);
+
+    /**
+     *  Deletes a product with the given id.
+     *  @param product_code The id of the product to be deleted
+     */
+    public void deleteProductById(long product_code);
 }

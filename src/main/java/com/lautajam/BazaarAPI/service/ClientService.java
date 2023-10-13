@@ -43,5 +43,13 @@ public class ClientService implements IClientService{
         return clientById;
     }
 
+    /**
+     * Deletes a client with the given id.
+     * @param client_id The id of the client to be deleted
+     */
+    public void deleteClientById(long client_id){
+        clientRepository.deleteById(client_id);
+    }
+
 
 }

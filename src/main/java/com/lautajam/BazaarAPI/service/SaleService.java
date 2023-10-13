@@ -41,4 +41,13 @@ public class SaleService implements ISaleService{
         Sale sale = saleRepository.findById(sale_code).orElse(null);
         return sale;
     }
+
+    /**
+     *  Deletes a sale with the given id.
+     *  @param sale_code The id of the sale to be deleted
+     */
+    @Override
+    public void deleteSaleById(long sale_code) {
+        saleRepository.deleteById(sale_code);
+    }
 }

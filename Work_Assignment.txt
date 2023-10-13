@@ -1,0 +1,115 @@
+Final Integrator TP
+
+Objective
+
+	The objective of this final integrative project is to validate the practical and technical knowledge of the
+	technical knowledge related to the development of APIs in the Java programming language using Spring Boot for the TodoCode
+	Boot for the course "Developing APIs in Java with Spring Boot" of the TodoCode Academy.
+
+Scenario
+	A bazaar has greatly increased its sales. Given this and the fact that it is becoming almost impossible to
+	impossible to register the sales and manage the stock of its products manually, it needs to develop an application that allows it to
+	the development of an application that allows it to perform this task.
+	The owner of the bazaar states that all the operations of the application should be carried out through two types of customers
+	be carried out through two different types of http clients:
+		- A web application, whose frontend will be developed by a friendly programmer (it will not be part of our task as backend developers).
+		of our task as backend developers).
+		- A Mobile application that will be implemented in the future.
+	Each of these apps represents the devices that she and her employees currently use.
+	currently. In short: a computer and several cell phones.
+	Given this particular situation and the fact that she needs to use the same backend for both options, she requests the development of an API.
+	options, she requests the development of an API.
+
+Modeling
+	From the survey carried out by a functional analyst, it was detected that the following classes will be necessary
+	the following classes will be needed:
+	- Product
+	- Sale
+	- Customer
+	Where each sale has a list of products and one and only one associated customer. In addition
+	of that, each class must have the following attributes:
+
+		Product
+			- Long product_code
+			- String name
+			- String brand
+			- Double cost
+			- Double quantity_available
+		Sale
+			- Long sale_code
+			- LocalDate sale_date
+			- Double total
+			- List<Product> listProducts
+			- Customer aCustomer
+		Customer
+			- Long customer_id
+			- String first name
+			- String last name
+			- String dni
+
+Requirements
+	From the survey carried out regarding the modeling, the owner of the bazaar specified the following requirements
+	has the following requirements:
+
+		1. To be able to make a complete CRUD of products.
+			a. HTTP methods: GET, POST, DELETE, PUT
+			b. Endpoints:
+				Creation: localhost:8080/products/create
+				Complete list of products: localhost:8080/products
+				Fetch a particular product: localhost:8080/products/{product_code}
+				Delete: localhost:8080/products/delete/{product_code}
+				Editing: localhost:8080/products/edit/{product_code}
+
+		2. To be able to perform a full CRUD of customers.
+			a. HTTP methods: GET, POST, DELETE, PUT
+			b. Endpoints:
+				Creation: localhost:8080/customers/create
+				Complete list of clients: localhost:8080/clients
+				Get a particular client: localhost:8080/clients/{client_id}
+				Delete: localhost:8080/clients/delete/{client_id}
+				Editing: localhost:8080/clients/edit/{client_id}
+
+		3. To be able to perform a complete sales CRUD
+			a. HTTP methods: GET, POST, DELETE, PUT
+			b. Endpoints:
+				Creation: localhost:8080/sales/create
+				Complete list of sales made: localhost:8080/sales
+				Fetch a particular sale: localhost:8080/sales/{sale_code}
+				Deleting: localhost:8080/sales/delete/{sale_code}
+				Edit: localhost:8080/sales/edit/{sales_code}
+			Note: It is not necessary for this requirement to update the stock of a product (discount) when making a sale, nor is it necessary to control
+			when making a sale, nor is it necessary to check if you have the quantity available to sell;
+			however, it will be considered as a "plus" or extra (for the bonus of point 8) if you wish to implement the functionality.
+			implement the functionality.
+
+		4. Obtain all the products whose available_quantity is less than 5
+			a. HTTP methods: GET
+			b. Endpoint:
+				localhost:8080/products/missing_stock
+
+		5. Get the list of products for a given sale
+			a. HTTP methods: GET
+			b. Endpoint:
+				localhost:8080/sales/products/{sale_code}
+
+		6. Get the sum of the amount and also total amount of sales for a given day.
+			a. HTTP methods: GET
+			b. Endpoint:
+				localhost:8080/sales/{date_sale}
+
+		7. Get the sales_code, total, quantity of products, customer's name and customer's last name from the sale with the highest amount of all.
+		last name of the customer of the sale with the highest amount of all.
+			a. HTTP methods: GET
+			b. Endpoint:
+				localhost:8080/sales/highest_sale.
+			Take into account DTO pattern for this scenario
+
+		8. BONUS (OPTIONAL)
+			a. Any proposed end-point, enhancement, class addition,
+			etc. that is proposed and implemented.
+			b. This section is optional and is intended to let creativity run wild when it comes to proposing
+			what other needs/requirements might exist in this scenario.
+			c. If this item is carried out, specify in a document the new requirement(s) proposed and their corresponding technical specifications.
+			requirements and their corresponding technical specifications (HTTP method, endpoint, etc.)
+			(HTTP method, endpoint, etc). Take as an example of a template for the
+			specification to the instructions in this statement.
