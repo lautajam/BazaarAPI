@@ -1,4 +1,4 @@
-package com.lautajam.BazaarAPI.contoller;
+package com.lautajam.BazaarAPI.controller;
 
 import com.lautajam.BazaarAPI.dto.TopSaleDTO;
 import com.lautajam.BazaarAPI.model.Product;
@@ -11,7 +11,6 @@ import com.lautajam.BazaarAPI.service.SaleService;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 

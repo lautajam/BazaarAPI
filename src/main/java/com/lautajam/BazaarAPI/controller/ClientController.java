@@ -1,4 +1,4 @@
-package com.lautajam.BazaarAPI.contoller;
+package com.lautajam.BazaarAPI.controller;
 
 import com.lautajam.BazaarAPI.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;

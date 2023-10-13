@@ -1,7 +1,9 @@
 package com.lautajam.BazaarAPI.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
