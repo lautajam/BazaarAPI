@@ -1,15 +1,18 @@
 package com.lautajam.BazaarAPI.service;
 
-import com.lautajam.BazaarAPI.model.Client;
 import com.lautajam.BazaarAPI.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lautajam.BazaarAPI.model.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductService implements IProductService{
+
+    final double LESS_STOCK = 5.0;
+    private final List<Product> voidList = new ArrayList<>();
 
     @Autowired
     private IProductRepository productRepository;
@@ -55,5 +58,22 @@ public class ProductService implements IProductService{
      */
     public void deleteProductById(long product_code) {
         productRepository.deleteById(product_code);
+    }
+
+    /**
+     * Return a list of products with the stock less than 5
+     * @return A list of products with the stock less than 5
+     */
+    public List<Product> getProductsByStockLess(){
+
+        List<Product> listAllProducts = getAllProducts();
+        List<Product> listProductsStockLess =  voidList;
+
+        for (Product product:
+             listAllProducts) {
+            if (product.getProduct_quantity_available() < LESS_STOCK)
+                listProductsStockLess.add(product);
+        }
+        return listProductsStockLess;
     }
 }

@@ -38,4 +38,10 @@ public interface IProductService {
      *  @param product_code The id of the product to be deleted
      */
     public void deleteProductById(long product_code);
+
+    /**
+     * Return a list of products with the stock less than 5
+     * @return A list of products with the stock less than 5
+     */
+    public List<Product> getProductsByStockLess();
 }

@@ -69,4 +69,16 @@ public class ProductController {
         productService.deleteProductById(product_code);
     }
 
+    /**
+     * Return a list of products with the stock less than 5
+     * @return A list of products with the stock less than 5
+     */
+    @GetMapping("/stockless")
+    @ResponseBody
+    public List<Product> getProductsByStockLess(){
+        List<Product> listProductsStockLess = productService.getProductsByStockLess();
+
+        return listProductsStockLess;
+    }
+
 }
