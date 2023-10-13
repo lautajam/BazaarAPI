@@ -27,6 +27,18 @@ public class SaleService implements ISaleService{
      */
     @Override
     public List<Sale> getAllSales() {
-        return saleRepository.findAll();
+        List<Sale> allSales = saleRepository.findAll();
+        return allSales;
+    }
+
+    /**
+     * Returns a sale with the given id.
+     * @param sale_code The id of the sale to be returned
+     * @return The sale with the given id or null if no sale with the given id exists
+     */
+    @Override
+    public Sale getSaleById(long sale_code) {
+        Sale sale = saleRepository.findById(sale_code).orElse(null);
+        return sale;
     }
 }

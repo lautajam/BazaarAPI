@@ -26,6 +26,17 @@ public class ProductService implements IProductService{
      * @return A list of all products in the database
      */
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        List<Product> allProductList = productRepository.findAll();
+        return allProductList;
+    }
+
+    /**
+     * Returns a product with the given id.
+     * @param product_code The id of the product to be returned
+     * @return The product with the given id or null if no product with the given id exists
+     */
+    public Product getProductById(long product_code) {
+        Product product = productRepository.findById(product_code).orElse(null);
+        return product;
     }
 }

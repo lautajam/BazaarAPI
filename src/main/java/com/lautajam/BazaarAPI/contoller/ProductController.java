@@ -29,6 +29,19 @@ public class ProductController {
     @GetMapping("/products")
     @ResponseBody
     public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+        List<Product> allProductList = productService.getAllProducts();
+        return allProductList;
+    }
+
+    /**
+     * Returns a product with the given id.
+     * @param product_code The id of the product to be returned
+     * @return The product with the given id or null if no product with the given id exists
+     */
+    @GetMapping("/products/{product_id}")
+    @ResponseBody
+    public Product getProductById(@PathVariable("product_id") long product_code) {
+        Product product = productService.getProductById(product_code);
+        return product;
     }
 }

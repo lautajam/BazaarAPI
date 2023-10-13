@@ -29,7 +29,20 @@ public class SaleController {
     @GetMapping("/sales")
     @ResponseBody
     public List<Sale> getSales(){
-        return saleService.getAllSales();
+        List<Sale> allSales = saleService.getAllSales();
+        return allSales;
+    }
+
+    /**
+     * Returns a sale with the given id.
+     * @param sale_code The id of the sale to be returned
+     * @return The sale with the given id or null if no sale with the given id exists
+     */
+    @GetMapping("/sales/{sale_code}")
+    @ResponseBody
+    public Sale getSale(@PathVariable("sale_code") int sale_code){
+        Sale sale = saleService.getSaleById(sale_code);
+        return sale;
     }
 
 }

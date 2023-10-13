@@ -31,4 +31,17 @@ public class ClientService implements IClientService{
        List<Client> allClientList = clientRepository.findAll();
        return allClientList;
     }
+
+    /**
+     * Returns a client with the given id.
+     * @param client_id The id of the client to be returned
+     * @return The client with the given id or null if no client with the given id exists
+     */
+    @Override
+    public Client getClientById(long client_id) {
+        Client clientById = clientRepository.findById(client_id).orElse(null);
+        return clientById;
+    }
+
+
 }

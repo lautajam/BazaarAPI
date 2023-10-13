@@ -19,4 +19,11 @@ public interface IClientService {
      * @return A list of all clients in the database
      */
     public List<Client> getAllClients();
+
+    /**
+     * Returns a client with the given id.
+     * @param client_id The id of the client to be returned
+     * @return The client with the given id or null if no client with the given id exists
+     */
+    public Client getClientById(long client_id);
 }

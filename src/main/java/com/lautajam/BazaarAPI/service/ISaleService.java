@@ -19,4 +19,11 @@ public interface ISaleService {
      * @return A list of all sales
      */
     public List<Sale> getAllSales();
+
+    /**
+     * Returns a sale with the given id.
+     * @param sale_code The id of the client to be returned
+     * @return The sale with the given id or null if no sale with the given id exists
+     */
+    public Sale getSaleById(long sale_code);
 }
