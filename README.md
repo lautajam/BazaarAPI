@@ -30,11 +30,11 @@ I recommend using the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/)  to r
 
 1. Open the terminal and drag the repository to a folder on your computer:
   
-    mkdir bazaarapi (on your desktop).
+    -> mkdir bazaarapi (on your desktop).
 
-    cd bazaarapi
+    -> cd bazaarapi
 
-    git clone https://github.com/lautajam/BazaarAPI
+    -> git clone https://github.com/lautajam/BazaarAPI
 
 4. Open xaamp or wampp and run the MySQL server.
 
@@ -42,11 +42,11 @@ I recommend using the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/)  to r
 
 6. In the terminal, access your project directory:
 
-   cd bazaarapi (on your desktop).
+   -> cd bazaarapi (on your desktop).
 
 8. Compile and run the project:
 
-   mvn spring-boot:run
+   -> mvn spring-boot:run
 
 ## Usage
 At initialization time the API documentation can be found at the following link: localhost:8080/swagger-ui.html (port may vary).
