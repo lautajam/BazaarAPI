@@ -1,18 +1,18 @@
 # BazaarAPI
 
-**Descripción**: La API de Bazar es una plataforma que permite la gestión de clientes, ventas y productos de una tienda. 
-Además de las operaciones CRUD básicas, ofrece funcionalidades adicionales para mejorar la eficiencia y análisis del negocio.
+**Description**: The Bazaar API is a platform that allows the management of customers, sales and products of a store. 
+In addition to basic CRUD operations, it offers additional functionalities to improve business efficiency and analytics.
 
-## Requisitos
+## Requirements
 
-Asegúrate de tener lo siguiente instalado antes de ejecutar la API:
+Make sure you have the following installed before running the API:
 
 - Java SDK 17
 - Spring Boot
-- MySQL 8.0+ (para la base de datos)
-- Xampp o Wampp (para el servidor de base de datos)
+- MySQL 8.0+ (for database)
+- Xampp or Wampp (for the database server)
 
-Y las depencesias de Maven:
+And the Maven depences:
 - Spring Boot DevTools DEVELOPER TOOLS
 - Lombok DEVELOPER TOOLS 
 - MySQL Driver SQL
@@ -20,26 +20,26 @@ Y las depencesias de Maven:
 - H2 Database SQL
 - Spring Web WEB
 
-Recomiendo utilizar el IDE IntelliJ IDEA para ejecutar la API y para generar el proyecto de Spring Spring Initializr (https://start.spring.io/).
+I recommend using the IntelliJ IDEA IDE to run the API and to generate the Spring Spring Initializr project (https://start.spring.io/).
 
-## Instalación
+## Installation
 
-1. Abre la terminal y blona el repositorio en una carpeta de tu equipo:
-    mkdir bazaarapi (en tu escritorio)
+1. Open the terminal and drag the repository to a folder on your computer:
+    mkdir bazaarapi (on your desktop).
     cd bazaarapi
     git clone https://github.com/lautajam/BazaarAPI
 
-2. Abre xaamp o wampp y ejecuta el servidor de MySQL
+2. Open xaamp or wampp and run the MySQL server.
 
-3. Crea una base de datos en MySQL con el nombre "bazaar_db" (o nombrala como quieras y modifica el archivo application.properties)
+3. Create a MySQL database with the name "bazaar_db" (or name it whatever you want and modify the application.properties file).
 
-4. En la terminal, accede al directorio de tu proyecto:
-   cd bazaarapi (en tu escritorio)
+4. In the terminal, access your project directory:
+   cd bazaarapi (on your desktop).
 
-5. Compila y ejecuta el proyecto:
+5. Compile and run the project:
    mvn spring-boot:run
 
-## Uso
-Al momento de inicializarla la documentación de la API se encuentra en el siguiente enlace: localhost:8080/swagger-ui.html (el puerto puede variar)
-En la carpeta Postman_Collection estàn todas las colecciones de la api para importar en Postman, està todo preparado para que se puedan
-hacer pruebas.
+## Usage
+At initialization time the API documentation can be found at the following link: localhost:8080/swagger-ui.html (port may vary).
+In the Postman_Collection folder are all the api collections to import in Postman, everything is ready to be tested.
+testing.
