@@ -1,9 +1,11 @@
 # BazaarAPI
 
-###Description: 
+**Description:** 
 
 The Bazaar API is a platform that allows the management of customers, sales and products of a store. 
 In addition to basic CRUD operations, it offers additional functionalities to improve business efficiency and analytics.
+
+This api is the final project of the [Java API Development with SpringBoot course](https://todocodeacademy.com/course/desarrollo-de-apis-con-spring-boot/) of [TodoCode](https://todocodeacademy.com/)
 
 ## Requirements
 
