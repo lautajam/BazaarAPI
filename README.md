@@ -49,7 +49,9 @@ I recommend using the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/)  to r
    -> mvn spring-boot:run
 
 ## Usage
-At initialization time the API documentation can be found at the following link: localhost:8080/swagger-ui.html (port may vary).
+At initialization time the API documentation can be found at the [Documentation GUI](localhost:8080/swagger-ui.html) 
+
+If the link does not work, try localhost:****/swagger-ui.html and change **** to the port you have configured.
 
 In the Postman_Collection folder are all the api collections to import in Postman, everything is ready to be tested.
 testing.
