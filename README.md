@@ -24,7 +24,7 @@ And the Maven depences:
 - H2 Database SQL
 - Spring Web WEB
 
-I recommend using the IntelliJ IDEA IDE to run the API and to generate the Spring Spring Initializr project (https://start.spring.io/).
+I recommend using the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/)  to run the API and to generate the Spring with [Spring Initializr](https://start.spring.io/).
 
 ## Installation
 
