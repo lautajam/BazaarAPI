@@ -41,5 +41,6 @@ I recommend using the IntelliJ IDEA IDE to run the API and to generate the Sprin
 
 ## Usage
 At initialization time the API documentation can be found at the following link: localhost:8080/swagger-ui.html (port may vary).
+
 In the Postman_Collection folder are all the api collections to import in Postman, everything is ready to be tested.
 testing.
