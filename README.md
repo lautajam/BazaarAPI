@@ -29,18 +29,23 @@ I recommend using the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/)  to r
 ## Installation
 
 1. Open the terminal and drag the repository to a folder on your computer:
+  
     mkdir bazaarapi (on your desktop).
+
     cd bazaarapi
+
     git clone https://github.com/lautajam/BazaarAPI
 
-2. Open xaamp or wampp and run the MySQL server.
+4. Open xaamp or wampp and run the MySQL server.
 
-3. Create a MySQL database with the name "bazaar_db" (or name it whatever you want and modify the application.properties file).
+5. Create a MySQL database with the name "bazaar_db" (or name it whatever you want and modify the application.properties file).
 
-4. In the terminal, access your project directory:
+6. In the terminal, access your project directory:
+
    cd bazaarapi (on your desktop).
 
-5. Compile and run the project:
+8. Compile and run the project:
+
    mvn spring-boot:run
 
 ## Usage
